@@ -39,16 +39,8 @@ class GameOfLife(Frame):
 		self.build_grid()
 
 		# creates a button to start the simulation
-
 		self.start_button = Button(self.parent, text = "Start Game", command = self.simulate_game)
 		self.start_button.grid(row = 2, column = 0)
-		# creates a button to stop the simulation
-		#self.keep_simulating = True
-		#self.stop_button = Button(self.parent, text = "Stop", command = self.stop_game)
-		#self.stop_button.grid(row = 2, column = 1)
-
-		#self.reset_button = Button(self.parent, text = "Reset", command = self.reset_game)
-		#self.reset_button.grid(row = 2, column = 2, sticky = W)
 
 	def build_grid(self):
 
@@ -108,15 +100,6 @@ class GameOfLife(Frame):
 			cell['bg'] = "black"
 		else:
 			cell['bg'] = "white"
-
-	#def reset_game(self):
-	#	for i in range(0, self.x_coord + 2):
-	#		for j in range(0, self.y_coord + 2):
-	#			self.cell_buttons[i][j]['bg'] = "white"
-	#			self.cell_buttons[i][j]['state'] = NORMAL
-
-	#def stop_game(self):
-	#	self.keep_simulating = False
 
 if __name__ == '__main__':
 	root = Tk()
