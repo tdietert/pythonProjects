@@ -47,9 +47,9 @@ if os.path.isfile("top_pictures.txt"):
 		textfile.write("Top 5 Pictures from reddit.com/r/pics: \n")
 
 		# searches through the list of pics to grab the matching pic to each top upvote count
-		for i in range(0, len(rPicsLinks)):
-			for j in range(0, len(topFivePics)):
-				if int(uvPics[i]['data-ups']) - int(uvPics[i]['data-downs']) == topFivePics[j]:
+		for i in range(0, len(topFivePics):
+			for j in range(0, len(rPicsLinks)):
+				if int(uvPics[j]['data-ups']) - int(uvPics[j]['data-downs']) == topFivePics[i]:
 					# dumps pic link and upvote count into file
 					textfile.write(str(j+1) + ') ')
 					textfile.write(rPicsLinks[i].get('href')+'\n')
