@@ -15,7 +15,7 @@ class GameOfLife(Frame):
 		self.grid(row = 0, column = 0)
 
 		self.size_x = 40
-		self.size_y = 32
+		self.size_y = 28
 		self.cell_buttons = []
 
 		self.initialUI()
@@ -40,15 +40,15 @@ class GameOfLife(Frame):
 
 		# creates a button to start the simulation
 		self.start_button = Button(self.parent, text = "Start Game", command = self.simulate_game)
-		self.start_button.grid(row = 2, column = 0)
+		self.start_button.grid(row = 1, column = 0)
 
 	def build_grid(self):
 
 		# creates new frame for grid of cells in game
 		self.game_frame = Frame(
 			self.parent, width = self.size_x + 2, height = self.size_y + 2, borderwidth = 1, relief = SUNKEN)
-		self.game_frame.grid(row = 1, column = 0, columnspan = 3)
-		
+		self.game_frame.grid(row = 2, column = 0)
+
 		#instantiates buttons for choosing initial configuration
 		self.cell_buttons = [[Button(self.game_frame, bg = "white", width = 2, height = 1) for i in range(self.size_x + 2)] for j in range(self.size_y + 2)]
 		# creates 2d array of buttons for grid
@@ -75,7 +75,7 @@ class GameOfLife(Frame):
 
 		for coord in buttons_to_toggle:
 			self.cell_toggle(self.cell_buttons[coord[0]][coord[1]])
-			
+
 		# updates (toggles) the cells on the grid
 		self.after(50, self.simulate_game)
 
